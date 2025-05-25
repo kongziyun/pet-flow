@@ -60,8 +60,11 @@ async def _test_workflow():
 
 
 if __name__ == "__main__":
-    from dotenv import load_dotenv
+    # from dotenv import load_dotenv
 
-    load_dotenv()
-    logging.basicConfig(level=logging.INFO)
-    asyncio.run(_test_workflow())
+    # load_dotenv()
+    # logging.basicConfig(level=logging.INFO)
+    # asyncio.run(_test_workflow())
+    from src.prose.graph.builder import build_graph
+    graph = build_graph()
+    print(graph.get_graph(xray=True).draw_mermaid())

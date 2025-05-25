@@ -7,12 +7,21 @@ Entry point script for the DeerFlow project.
 
 import argparse
 import asyncio
+import logging
+from src.pet_symptoms.graph.builder import build_graph
 
 from InquirerPy import inquirer
 
 from src.config.questions import BUILT_IN_QUESTIONS, BUILT_IN_QUESTIONS_ZH_CN
 from src.workflow import run_agent_workflow_async
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,  # Default level is INFO
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+)
+
+logger = logging.getLogger(__name__)
 
 def ask(
     question,

@@ -53,3 +53,4 @@ if __name__ == "__main__":
     # Initialize LLMs for different purposes - now these will be cached
     basic_llm = get_llm_by_type("basic")
     print(basic_llm.invoke("Hello"))
+    print(graph.get_graph(xray=True).draw_mermaid())
